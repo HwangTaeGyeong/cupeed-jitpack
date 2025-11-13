@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'cupeed'
-version = '0.0.1-SNAPSHOT'
-description = 'Demo project for Spring Boot'
+version = '1.0.0'
+//description = 'Demo project for Spring Boot'
 
 java {
 	toolchain {
@@ -19,17 +19,16 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.4.10'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.4.10'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.4.10'
     compileOnly 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
-
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
 
 bootJar {
     enabled = false
